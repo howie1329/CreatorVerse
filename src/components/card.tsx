@@ -1,5 +1,12 @@
+interface creator{
+  name: string;
+  url: string;
+  description: string;
+  imageUrl: string;
+}
 
-function card({name, url, description, imageUrl}) {
+
+function card({name, url, description, imageUrl}: creator) {
   return (
     <div>
         <h2>{name}</h2>
