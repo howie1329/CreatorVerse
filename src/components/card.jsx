@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 
-function card({name, url, description, imageUrl}) {
+function Card({name, url, description, imageUrl}) {
   return (
     <div>
         <h2>{name}</h2>
@@ -10,4 +11,4 @@ function card({name, url, description, imageUrl}) {
   )
 }
 
-export default card
+export default Card
