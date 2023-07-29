@@ -16,17 +16,17 @@ export default function ShowCreators({creators}) {
 
   },[creators, data.length])
 
-  const Item = () => {
+  const DisplayItem = () => {
     if (display){
-      return  (<div>{data && data.map((item) => (<Card key={item.id} name={item.name} url={item.url} description={item.description} imageURL={item.imageURL}/>))}
+      return  (<div>{data && data.map((item) => (<Card key={item.id} id={item.id} name={item.name} url={item.url} description={item.description} imageURL={item.imageURL}/>))}
       </div>)
     } else {
       return (<div>No Creators Yet</div>)
     }
   }
   return (
-    <div>
-      {<Item />}
-    </div>
+    <>
+      {<DisplayItem />}
+    </>
   )
 }

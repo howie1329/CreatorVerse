@@ -1,13 +1,17 @@
 /* eslint-disable react/prop-types */
 
-function Card({name, url, description, imageUrl}) {
+import { Link } from "react-router-dom"
+
+function Card({id, name, url, description, imageUrl}) {
   return (
-    <div>
+    <Link to="/viewCreator" state={{id: id}}>
+      <div>
         <h2>{name}</h2>
         <a href={url}>{name + "content page"}</a>
         <p>{description}</p>
         <img src={imageUrl} alt={name + "image"} />
-    </div>
+      </div>
+    </Link>
   )
 }
 
