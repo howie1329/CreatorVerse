@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/jsx-no-target-blank */
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useEffect,useState } from 'react'
