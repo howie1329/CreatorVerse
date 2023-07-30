@@ -1,11 +1,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { useNavigate } from "react-router-dom"
 import Card from "../components/Card"
 import { useEffect, useState } from "react"
 
 export default function ShowCreators({creators}) {
   const [data,setData] = useState([])
   const [display,setDisplay] = useState(false)
+  const nav = useNavigate()
+
+  const handleSubmit = () => {
+    nav("/addCreator")
+  }
   useEffect(() => {
     setData(creators)
     if (data.length == 0){
@@ -27,6 +33,7 @@ export default function ShowCreators({creators}) {
   return (
     <>
       {<DisplayItem />}
+      <button onClick={handleSubmit}>New Creator</button>
     </>
   )
 }
