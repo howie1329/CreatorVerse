@@ -3,6 +3,7 @@
 import { useNavigate } from "react-router-dom"
 import Card from "../components/Card"
 import { useEffect, useState } from "react"
+import { Button } from "@mui/material"
 
 export default function ShowCreators({creators}) {
   const [data,setData] = useState([])
@@ -33,7 +34,7 @@ export default function ShowCreators({creators}) {
   return (
     <>
       {<DisplayItem />}
-      <button onClick={handleSubmit}>New Creator</button>
+      <Button variant="contained" onClick={handleSubmit}>New Creator</Button>
     </>
   )
 }
