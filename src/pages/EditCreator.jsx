@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import { supabase } from "../client"
+import { Button, Card, TextField } from "@mui/material"
 
 
 export default function EditCreator() {
@@ -43,28 +44,18 @@ export default function EditCreator() {
   }
 
   return (
-    <div>
-    <h2>Edit Creators Infomation</h2>
-    <form>
-      <label>
-        Name:
-        <input defaultValue={name} onChange={(e) => setName(e.target.value)}></input>
-      </label>
-      <label>
-        Url:
-      <input defaultValue={url} onChange={(e) => setUrl(e.target.value)}></input>
-      </label>
-      <label>
-        Description:
-        <input defaultValue={description} onChange={(e) => setDescription(e.target.value)}></input>
-      </label>
-      <label>
-        Image Url:
-        <input defaultValue={imageUrl} onChange={(e) => setImageUrl(e.target.value)}></input>
-      </label>
-    </form>
-    <button onClick={handleCancel}>Cancel</button>
-    <button onClick={handleSubmit}>Submit</button>
+    <Card className="flex flex-col w-9/12 gap-2 p-2">
+    <h2 className="self-center">Edit Creators Infomation</h2>
+    <div className="flex flex-col gap-2">
+      <TextField label="Name" defaultValue={name} onChange={(e) => setName(e.target.value)}></TextField>
+      <TextField label="URL" defaultValue={url} onChange={(e) => setUrl(e.target.value)}></TextField>
+      <TextField label="Description" defaultValue={description} onChange={(e) => setDescription(e.target.value)}></TextField>
+      <TextField label="Image URL" defaultValue={imageUrl} onChange={(e) => setImageUrl(e.target.value)}></TextField>
     </div>
+    <div className="flex self-center gap-4">
+    <Button variant="outlined" onClick={handleCancel}>Cancel</Button>
+    <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+    </div>
+    </Card>
   )
 }

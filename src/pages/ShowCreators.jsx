@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom"
-import Card from "../components/Card"
+import Cards from "../components/Cards"
 import { useEffect, useState } from "react"
 import { Button } from "@mui/material"
 
@@ -25,16 +25,17 @@ export default function ShowCreators({creators}) {
 
   const DisplayItem = () => {
     if (display){
-      return  (<div>{data && data.map((item) => (<Card key={item.id} id={item.id} name={item.name} url={item.url} description={item.description} imageURL={item.imageURL}/>))}
+      return  (<div className="flex flex-row justify-evenly">{data && data.map((item) => (<Cards key={item.id} id={item.id} name={item.name} url={item.url} description={item.description} imageURL={item.imageURL}/>))}
       </div>)
     } else {
       return (<div>No Creators Yet</div>)
     }
   }
   return (
-    <>
+    <div className="flex flex-col w-screen gap-2">
+      <h1 className="self-center">CreatorVerse</h1>
       {<DisplayItem />}
       <Button variant="contained" onClick={handleSubmit}>New Creator</Button>
-    </>
+    </div>
   )
 }

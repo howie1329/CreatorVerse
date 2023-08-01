@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useEffect,useState } from 'react'
 import ShowCreators from './pages/ShowCreators'
@@ -22,7 +21,7 @@ function App() {
   },[])
 
   return (
-    <>
+    <div className='flex flex-col max-w-screen h-screen justify-center items-center border-black border-2'>
     <BrowserRouter>
     <Routes>
       <Route path = "/" element = {<ShowCreators creators={creators} />} />
@@ -31,7 +30,7 @@ function App() {
       <Route path = "/viewCreator" element = {<ViewCreator />} />
     </Routes>
     </BrowserRouter>
-    </>
+    </div>
   )
 }
 
