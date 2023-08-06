@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply font-bold text-2xl capitalize text-white
+    }
+    h2 {
+        @apply font-bold text-xl capitalize underline
+    }
+    p {
+        @apply text-lg capitalize
+    }
+    a {
+        @apply capitalize
+    }
+}

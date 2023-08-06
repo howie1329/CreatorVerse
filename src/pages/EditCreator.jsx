@@ -26,7 +26,7 @@ export default function EditCreator() {
       }
     }
     fetchCreator()
-  },[])
+  }, [])
 
   const handleCancel = () => {
     nav("/")

@@ -33,9 +33,8 @@ export default function ShowCreators({creators}) {
   }
   return (
     <div className="flex flex-col w-screen gap-2">
-      <h1 className="self-center">CreatorVerse</h1>
       {<DisplayItem />}
-      <Button variant="contained" onClick={handleSubmit}>New Creator</Button>
+      <Button className="self-center" variant="contained" onClick={handleSubmit}>New Creator</Button>
     </div>
   )
 }

@@ -21,7 +21,8 @@ function App() {
   },[])
 
   return (
-    <div className='flex flex-col max-w-screen h-screen justify-center items-center border-black border-2'>
+    <div className='flex flex-col max-w-screen h-screen justify-center items-center border-black border-2 bg-black'>
+      <h1 className="self-center">CreatorVerse</h1>
     <BrowserRouter>
     <Routes>
       <Route path = "/" element = {<ShowCreators creators={creators} />} />
