@@ -1,10 +1,10 @@
 # WEB103 Prework - *👉🏿 CreatorVerse*
 
-Submitted by: **👉🏿 Howard Thomas**
+Submitted by: **Howard Thomas**
 
-About this web app: **👉🏿 app description here**
+About this web app: **Simple CRUD App To Display Different Content Creators**
 
-Time spent: **👉🏿 X** 8 hours 
+Time spent: **8** hours 
 
 ## Required Features
 
@@ -29,14 +29,14 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='https://imgur.com/mYR7roh.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/mYR7roh.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [Kap](https://getkap.co/) for macOS
 
 ## License
 
-Copyright [👉🏿 2023] [👉🏿 Howard Thimas]
+Copyright [2023] [Howard Thimas]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
