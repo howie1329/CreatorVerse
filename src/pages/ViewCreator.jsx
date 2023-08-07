@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import { supabase } from "../client"
-import { Button, Card } from "@mui/material"
+import { Button } from "@mui/material"
 import CreateIcon from '@mui/icons-material/Create';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -45,17 +45,16 @@ export default function ViewCreator() {
   const DisplayItem = () => {
     if (display){
       return(
-        <Card className="flex flex-col justify-center items-center text-center w-2/6 h-fit gap-2 py-2" >
+        <div className="flex flex-col bg-slate-300 rounded-2xl justify-center items-center text-center w-2/6 h-fit gap-2 py-2" >
         <h2>{currentCreator[0].name}</h2>
-        <p><CropOriginalRoundedIcon /> {currentCreator[0].url}</p>
+        <a href={currentCreator[0].url}><CropOriginalRoundedIcon /> {currentCreator[0].name + " Content Page"}</a>
         <p>{currentCreator[0].description}</p>
-        <p>{currentCreator[0].imageURL}</p>
         <img className="w-56 h-56" src={currentCreator[0].imageURL} alt="Content Creator Image"></img>
         <div className="flex gap-2 ">
         <Button variant="outlined" color="error" onClick={deleteCreator}><DeleteIcon/> Delete</Button>
         <Button variant="contained" onClick={updateCreator}><CreateIcon /> Edit</Button>
         </div>
-        </Card>
+        </div>
       )
     } else {
       return <p className="font-bold text-2lx">Loading...</p>

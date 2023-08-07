@@ -12,6 +12,7 @@ export default function EditCreator() {
   const [url, setUrl] = useState("")
   const [description, setDescription] = useState("")
   const [imageUrl, setImageUrl] = useState("")
+  const [loading, setLoading] = useState(true)
 
   const nav = useNavigate()
 
@@ -19,10 +20,12 @@ export default function EditCreator() {
     const fetchCreator = async () => {
       let {data: creator, error} = await supabase.from("creators").select("*").eq("id",id)
       if (error === null){
-        setName(creator.name)
-        setUrl(creator.url)
-        setDescription(creator.description)
-        setImageUrl(creator.imageURL)
+        console.log(creator)
+        setName(creator[0].name)
+        setUrl(creator[0].url)
+        setDescription(creator[0].description)
+        setImageUrl(creator[0].imageURL)
+        setLoading(false)
       }
     }
     fetchCreator()
@@ -43,7 +46,8 @@ export default function EditCreator() {
     }
   }
 
-  return (
+  const Info = () => {
+    return (
     <Card className="flex flex-col w-9/12 gap-2 p-2">
     <h2 className="self-center">Edit Creators Infomation</h2>
     <div className="flex flex-col gap-2">
@@ -57,5 +61,20 @@ export default function EditCreator() {
     <Button variant="contained" onClick={handleSubmit}>Submit</Button>
     </div>
     </Card>
+    )
+  }
+
+  const Display = () => {
+    if (loading) {
+      return <p className="text-white">Loading...</p>
+    } else {
+      return <Info />
+    }
+  }
+
+  return (
+    <>
+    <Display />
+    </>
   )
 }

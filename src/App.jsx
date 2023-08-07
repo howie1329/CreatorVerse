@@ -11,12 +11,13 @@ function App() {
 
   const [creators, setCreators] = useState([])
 
+  const fetchData = async () => {
+    let {data: creators, error} = await supabase.from("creators").select("*")
+    setCreators(creators)
+    console.log(creators)
+  }
+
   useEffect(() => {
-    const fetchData = async () => {
-      let {data: creators, error} = await supabase.from("creators").select("*")
-      setCreators(creators)
-      console.log(creators)
-    }
     fetchData()
   },[])
 
@@ -25,7 +26,7 @@ function App() {
       <h1 className="self-center">CreatorVerse</h1>
     <BrowserRouter>
     <Routes>
-      <Route path = "/" element = {<ShowCreators creators={creators} />} />
+      <Route path = "/" element = {<ShowCreators creators={creators} handleRefesh={fetchData} />} />
       <Route path = "/addCreator" element = {<AddCreator />} />
       <Route path = "/editCreator" element = {<EditCreator />} />
       <Route path = "/viewCreator" element = {<ViewCreator />} />

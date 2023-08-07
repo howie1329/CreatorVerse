@@ -5,7 +5,7 @@ import Cards from "../components/Cards"
 import { useEffect, useState } from "react"
 import { Button } from "@mui/material"
 
-export default function ShowCreators({creators}) {
+export default function ShowCreators({creators, handleRefesh}) {
   const [data,setData] = useState([])
   const [display,setDisplay] = useState(false)
   const nav = useNavigate()
@@ -25,14 +25,16 @@ export default function ShowCreators({creators}) {
 
   const DisplayItem = () => {
     if (display){
-      return  (<div className="flex flex-row justify-evenly">{data && data.map((item) => (<Cards key={item.id} id={item.id} name={item.name} url={item.url} description={item.description} imageURL={item.imageURL}/>))}
+      console.log(data)
+      return  (<div className="grid grid-cols-3 gap-2 self-center">{data && data.map((item) => (<Cards key={item.id} id={item.id} name={item.name} description={item.description} imageURL={item.imageURL}/>))}
       </div>)
     } else {
       return (<div>No Creators Yet</div>)
     }
   }
   return (
-    <div className="flex flex-col w-screen gap-2">
+    <div className="flex flex-col w-screen h-screen gap-2">
+      <Button className="self-center" variant="contained" onClick={handleRefesh}>Refresh</Button>
       {<DisplayItem />}
       <Button className="self-center" variant="contained" onClick={handleSubmit}>New Creator</Button>
     </div>
